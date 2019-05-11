@@ -30,7 +30,11 @@ Route::get('about', function () {
     return view('other.about');
 })->name('other.about');
 
+<<<<<<< HEAD
+Route::group(['prefix' => 'admin', 'middleware'=>['auth']], function() {
+=======
 Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function() {
+>>>>>>> master
     Route::get('', [
         'uses' => 'PostController@getAdminIndex',
         'as' => 'admin.index'
@@ -63,4 +67,11 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function() {
 });
 Auth::routes();
 
+<<<<<<< HEAD
+Route::post('login', [
+    'uses'=>'SignInController@signin',
+    'as'=>'auth.signin'
+]);
+=======
 Route::get('/home', 'HomeController@index')->name('home');
+>>>>>>> master

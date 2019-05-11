@@ -9,6 +9,8 @@ use App\Like;
 use App\Post;
 use App\Tag;
 use Illuminate\Http\Request;
+use Auth;
+use Gate;
 
 class PostController extends Controller
 {
@@ -53,16 +55,29 @@ class PostController extends Controller
 
     public function postAdminCreate(Request $request)
     {
+        // if(!Auth::check()) {
+        //     return redirect()->back();
+        // }
+
         $this->validate($request, [
             'title' => 'required|min:5',
             'content' => 'required|min:10'
         ]);
+<<<<<<< HEAD
+
+        $user = Auth::user();
+=======
         $user = Auth::user();
 
+>>>>>>> master
         $post = new Post([
             'title' => $request->input('title'),
             'content' => $request->input('content')
         ]);
+<<<<<<< HEAD
+        
+=======
+>>>>>>> master
 
         $user->posts()->save($post);
         $post->tags()->attach($request->input('tags') === null ? [] : $request->input('tags'));
