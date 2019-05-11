@@ -26,6 +26,7 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+<<<<<<< HEAD
 
     public function posts() {
         return $this->hasMany('App\Post');
@@ -34,4 +35,11 @@ class User extends Authenticatable
     public function sendPasswordResetNotification($token) {
         $this->notify(new CustomPasswordReset($token));
     }
+=======
+    
+    public function posts()
+    {
+        return $this->hasMany('App\Post');
+    }
+>>>>>>> master
 }

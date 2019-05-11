@@ -27,6 +27,10 @@ class ResetPasswordController extends Controller
      */
 
     protected $redirectTo = '/admin';
+<<<<<<< HEAD
+=======
+    
+>>>>>>> master
     public function __construct()
     {
         $this->middleware('guest');
