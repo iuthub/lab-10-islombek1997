@@ -24,4 +24,9 @@ class Post extends Model
     public function getTitleAttribute($value) {
         return strtoupper($value);
     }
+
+    public function user() 
+    {
+        return $this->belongsTo('App\User');
+    }
 }
